@@ -2,8 +2,8 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
-import { getProducts } from '@/utils/storage';  // Adjust the path as necessary
-import { productColumns } from '@/components/Admin/table/columns/products';  // Ensure correct path
+import { getProducts } from '@/utils/storage';  
+import { productColumns } from '@/components/Admin/table/columns/products'; 
 
 const ProductList = () => {
   const [data, setData] = useState<any[]>([]);
