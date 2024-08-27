@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://my-ecommerce-platform.com/sitemap.xml
