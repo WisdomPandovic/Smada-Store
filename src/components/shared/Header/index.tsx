@@ -168,7 +168,7 @@ const Header: FC = () => {
         <Link href="/" className="text-sm font-bold">
           Home
         </Link>
-        <Link href="/" className="text-sm font-bold">
+        <Link href="/store/shop" className="text-sm font-bold">
           Shop
         </Link>
         <Link href="/" className="text-sm font-bold">

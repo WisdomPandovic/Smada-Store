@@ -71,6 +71,11 @@ const Footer: React.FC = () => {
 
           </div>
         </div>
+       
+      </div>
+      <div className="bg-[#f7f7f7] copyright text-center text-black text-sm ">
+        <h2>@2024 SMADA STORE | All Right Reserved</h2>
+        <p className="pb-2">Developed & Maintained by Panda</p>
       </div>
     </footer>
   );
