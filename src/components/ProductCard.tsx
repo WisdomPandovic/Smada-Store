@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Product } from '../types/index';
 import Link from 'next/link';
 
 interface ProductCardProps {

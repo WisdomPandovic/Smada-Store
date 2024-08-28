@@ -1,3 +1,5 @@
+import { Product } from '../types/index'; 
+
 export const getProducts = (): Product[] => {
     const products = localStorage.getItem('products');
     return products ? JSON.parse(products) : [];

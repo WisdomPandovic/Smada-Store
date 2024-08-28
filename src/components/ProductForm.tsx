@@ -1,7 +1,8 @@
 'use client'
-import { useState, FC } from 'react';
+import { useState, FC, useEffect } from 'react';
 import { saveProducts, getProducts } from '../utils/storage'; 
-import { Product } from '../types'; 
+import { Product } from '../types/index'; 
+import { useRouter } from 'next/navigation';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,18 +13,19 @@ const ProductForm: FC = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [category, setCategory] = useState('');
 
+  const router = useRouter(); 
+
   const handleImageUpload = (file: File) => {
     const reader = new FileReader();
     reader.onloadend = () => {
-      setImageUrl(reader.result as string); // Convert the file to Base64 string
+      setImageUrl(reader.result as string); 
     };
-    reader.readAsDataURL(file); // Read the file as a Data URL (Base64 string)
+    reader.readAsDataURL(file);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validation check
     if (!name || !description || !price || !imageUrl || !category) {
       toast.error('Please fill out all fields and upload an image.');
       return;
@@ -38,12 +40,17 @@ const ProductForm: FC = () => {
       category
     };
     
-    const products = getProducts();
-    products.push(newProduct);
-    saveProducts(products);
+    try {
+      const products = getProducts();
+      products.push(newProduct);
+      saveProducts(products);
+      toast.success('Product added successfully!');
 
-    toast.success('Product added successfully!');
-    
+      router.push('/Admin/product-list');
+    } catch (error) {
+      toast.error('Failed to save product.');
+    }
+
     setName('');
     setDescription('');
     setPrice('');
@@ -92,9 +99,8 @@ const ProductForm: FC = () => {
           <option value="Men">Men</option>
           <option value="Women">Women</option>
           <option value="Underwear">Underwear</option>
-          {/* Add more categories as needed */}
         </select>
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">Add Product</button>
+        <button type="submit" className="bg-black text-white py-3 px-5 rounded">Add Product</button>
       </form>
 
       <ToastContainer />

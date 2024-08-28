@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FeatureItems: React.FC = () => {
-  // Sample data for the images and titles
+  
   const items = [
     { id: 1, title: 'New In', imageUrl: '/assests/images/FeatureItems.jpg' },
     { id: 2, title: 'Clothing', imageUrl: '/assests/images/FeatureItems-2.jpg' },
@@ -25,9 +25,9 @@ const FeatureItems: React.FC = () => {
       <img
             src={item.imageUrl}
             alt={item.title}
-            className="w-full h-32 object-cover mb-2 " // Added shadow class
+            className="w-full h-32 object-cover mb-2 " 
           />
-          <h3 className="text-sm font-bold uppercase"> {/* Added text shadow */}
+          <h3 className="text-sm font-bold uppercase"> 
             {item.title}
           </h3>
         </div>

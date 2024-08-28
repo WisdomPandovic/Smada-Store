@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BlogSection = () => {
-  // Sample blog data
+  
   const blogs = [
     {
       id: 1,
@@ -38,14 +38,14 @@ const BlogSection = () => {
               className="w-full h-48 object-cover"
             />
             <p className="absolute bottom-40 left-1/2 transform -translate-x-1/2 text-center text-xs text-white bg-black py-3 px-2 w-[150px]">
-  {blog.date}
-</p>
+              {blog.date}
+            </p>
 
             <div className="mt-4">
               <h3 className="text-lg font-semibold mb-2 text-center">{blog.title}</h3>
-              <p className="text-sm text-gray-600 mb-4 text-center">{blog.description}</p>            
+              <p className="text-sm text-gray-600 mb-4 text-center">{blog.description}</p>
               <div className="flex justify-center mt-4">
-                <button className="bg-white text-xs text-black border-2 border-black py-2 px-6 hover:bg-blue-600 hover:text-white transition duration-300">
+                <button className="bg-white text-xs text-black border-2 border-black py-2 px-6 hover:bg-black hover:text-white transition duration-300">
                   Read More
                 </button>
               </div>

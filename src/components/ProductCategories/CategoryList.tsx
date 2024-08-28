@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { getProducts } from '../../utils/storage'; 
-import { Product } from '../../types/index'; 
-import Image from 'next/image';
+import React from 'react';
+import { getProducts } from '../../utils/storage'; // Import your function to get products from localStorage
+import { Product } from '../../types/index'; // Make sure you have a Product type defined
 import Link from 'next/link';
+import Image from 'next/image';
 
-const ProductList: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+interface ProductListProps {
+  category: string;
+}
 
-  useEffect(() => {
-    const fetchedProducts = getProducts();
-    setProducts(fetchedProducts);
-  }, []);
+const CategoryList: React.FC<ProductListProps> = ({ category }) => {
+  // Fetch products from local storage
+  const products: Product[] = getProducts();
+
+  // Filter products based on the selected category
+  const filteredProducts = products.filter(product => product.category === category);
 
   return (
     <div className="m-5">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {products.map((product) => (
-          <div key={product.id} className="border rounded-lg overflow-hidden shadow-md">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map(product => (
+            <div key={product.id} className="border rounded-lg overflow-hidden shadow-md">
             <div className="relative w-full h-80"> 
               <Image
                 src={product.imageUrl}
@@ -37,10 +41,12 @@ const ProductList: React.FC = () => {
               </Link>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="flex justify-center items-center py-4"> 
+        ))
+      ) : (
+        <p>No products found in the {category} category.</p>
+      )}
+    </div>
+    <div className="flex justify-center items-center py-4"> 
         <Link href="/some-page" className="bg-white border text-black text-sm py-2 px-4 rounded shadow-md hover:bg-black hover:text-white transition duration-300">
           More
         </Link>
@@ -49,4 +55,4 @@ const ProductList: React.FC = () => {
   );
 };
 
-export default ProductList;
+export default CategoryList;

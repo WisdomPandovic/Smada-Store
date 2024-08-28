@@ -2,8 +2,10 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '@/components/ProductCard';
 import { getProducts } from '../utils/storage';
+import { Product } from '../types/index';
 import FeatureItems from '@/components/FeaturedItem/FeaturedItem';
 import ProductList from '@/components/FeaturedItem/ProductList';
+import ProductCategories from '@/components/ProductCategories/ProductCategories'
 import BlogSection from '@/components/BlogComponents/BlogSection'
 import Image from 'next/image';
 import { FaShippingFast, FaUndoAlt, FaHeadset, FaGift } from "react-icons/fa";
@@ -37,27 +39,27 @@ const HomePage = () => {
             layout="responsive"
           />
         </div>
-        {/* Add more images if needed */}
+
       </div>
       <FeatureItems />
       <div className="flex items-center justify-center my-10 mx-5">
         <Image
           src="/assests/images/discount.jpg"
           alt="Full Width and Height"
-          width={100}   // Set a specific width
+          width={100}
           height={150}
           layout="responsive"
         />
       </div>
 
-      <div className="flex items-center justify-center min-h-[200px] p-4 md:p-6 lg:p-8 cursor-pointer">
+      {/* <div className="flex items-center justify-center min-h-[200px] p-4 md:p-6 lg:p-8 cursor-pointer">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-4xl">
           <div className="border p-4 sm:p-6 text-center bg-black text-white uppercase">Men</div>
           <div className="border p-4 sm:p-6 text-center bg-white uppercase">Women</div>
           <div className="border p-4 sm:p-6 text-center bg-white uppercase">Underwear</div>
         </div>
       </div>
-      <ProductList />
+      <ProductList /> */}
 
 
       {/* <h1 className="text-3xl font-bold mb-4">Product Listing</h1>
@@ -67,6 +69,7 @@ const HomePage = () => {
         ))}
       </div> */}
 
+      <ProductCategories />
 
       <div className='bg-[#f7f7f7] my-10 mx-5'>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-9 ">
@@ -90,28 +93,25 @@ const HomePage = () => {
         </div>
         <hr className="border-white" />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 p-8 bg-gray-100">
-          {/* Fast Free Shipping */}
+
           <div className="flex flex-col items-center text-center">
             <FaShippingFast className="text-4xl text-blue-500 mb-2" />
             <h3 className="font-semibold text-lg">Fast Free Shipping</h3>
             <p className="text-sm text-gray-600">Get your orders delivered fast and free.</p>
           </div>
 
-          {/* 30 Day Money Back */}
           <div className="flex flex-col items-center text-center">
             <FaUndoAlt className="text-4xl text-blue-500 mb-2" />
             <h3 className="font-semibold text-lg">30 Day Money Back</h3>
             <p className="text-sm text-gray-600">Enjoy a risk-free shopping experience with our 30-day guarantee.</p>
           </div>
 
-          {/* 24/7 Help Center */}
           <div className="flex flex-col items-center text-center">
             <FaHeadset className="text-4xl text-blue-500 mb-2" />
             <h3 className="font-semibold text-lg">24/7 Help Center</h3>
             <p className="text-sm text-gray-600">We're here to help you any time of the day.</p>
           </div>
 
-          {/* Many Promotional Gifts */}
           <div className="flex flex-col items-center text-center">
             <FaGift className="text-4xl text-blue-500 mb-2" />
             <h3 className="font-semibold text-lg">Many Promotional Gifts</h3>
@@ -119,7 +119,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <BlogSection/>
+      <BlogSection />
     </div>
   );
 };

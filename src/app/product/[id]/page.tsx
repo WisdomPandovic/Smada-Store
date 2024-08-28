@@ -1,16 +1,15 @@
 'use client'
 import { useRouter } from 'next/router';
-import { getProducts } from '../../../utils/storage'; // Adjust the path as necessary
-import { Product } from '../../types';
+import { getProducts } from '../../../utils/storage'; 
+import { Product } from '../../../types/index';
 import { useParams } from 'next/navigation';
 import { FaStar } from 'react-icons/fa';
 import ProductList from '@/components/FeaturedItem/ProductList';
 
 const ProductDetails = () => {
-    //   const router = useRouter();
     const { id } = useParams();
 
-    console.log('Product ID from URL:', id); // Debugging: Check if ID is captured
+    console.log('Product ID from URL:', id); 
     const rating = 4;
     const products: Product[] = getProducts();
     const product = products.find((p) => p.id === id);
@@ -22,7 +21,6 @@ const ProductDetails = () => {
     return (
         <div className="bg-[#f7f7f7] p-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Image Section */}
                 <div className="flex items-center justify-center">
                     <img
                         src={product.imageUrl}
@@ -30,7 +28,7 @@ const ProductDetails = () => {
                         className="w-full h-full object-cover rounded-lg shadow-md"
                     />
                 </div>
-                {/* Details Section */}
+                
                 <div className="flex flex-col p-4">
                     <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
                     <p className="text-gray-700 mb-4">{product.description}</p>
