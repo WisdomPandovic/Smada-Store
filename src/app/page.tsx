@@ -109,7 +109,7 @@ const HomePage = () => {
           <div className="flex flex-col items-center text-center">
             <FaHeadset className="text-4xl text-blue-500 mb-2" />
             <h3 className="font-semibold text-lg">24/7 Help Center</h3>
-            <p className="text-sm text-gray-600">We're here to help you any time of the day.</p>
+            <p className="text-sm text-gray-600">We&apos;re here to help you any time of the day.</p>
           </div>
 
           <div className="flex flex-col items-center text-center">
