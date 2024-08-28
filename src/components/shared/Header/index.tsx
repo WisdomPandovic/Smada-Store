@@ -272,6 +272,9 @@ const Header: FC = () => {
             </button>
             {isDropdownOpen && (
               <div className="mt-2 w-full bg-white border rounded-lg shadow-lg py-2 z-10">
+                <Link href="/Admin/product-form" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={closeDropdown}>
+                Admin Portal
+              </Link>
                 <Link href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={toggleMenu}>
                   Profile
                 </Link>

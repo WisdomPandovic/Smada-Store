@@ -74,8 +74,8 @@ const Footer: React.FC = () => {
        
       </div>
       <div className="bg-[#f7f7f7] copyright text-center text-black text-sm ">
-        <h2>@2024 SMADA STORE | All Right Reserved</h2>
-        <p className="pb-2">Developed & Maintained by Panda</p>
+        <h2>@2024 <span className="text-red-500 font-bold">SMA</span><span className='font-bold'>DA STORE</span> | All Right Reserved</h2>
+        <p className="pb-2">Developed & Maintained by <span className='font-bold'>Panda</span></p>
       </div>
     </footer>
   );

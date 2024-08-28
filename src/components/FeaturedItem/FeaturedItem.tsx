@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const FeatureItems: React.FC = () => {
   
@@ -22,9 +23,11 @@ const FeatureItems: React.FC = () => {
       {items.map(item => (
         <div key={item.id} className="text-center cursor-pointer">
       <div className='shadow-sm p-4'>
-      <img
+      <Image
             src={item.imageUrl}
             alt={item.title}
+            width={100}
+            height={32}
             className="w-full h-32 object-cover mb-2 " 
           />
           <h3 className="text-sm font-bold uppercase"> 

@@ -47,7 +47,7 @@ const CategoryList: React.FC<ProductListProps> = ({ category }) => {
       )}
     </div>
     <div className="flex justify-center items-center py-4"> 
-        <Link href="/some-page" className="bg-white border text-black text-sm py-2 px-4 rounded shadow-md hover:bg-black hover:text-white transition duration-300">
+        <Link href="/store/shop" className="bg-white border text-black text-sm py-2 px-4 rounded shadow-md hover:bg-black hover:text-white transition duration-300">
           More
         </Link>
       </div>

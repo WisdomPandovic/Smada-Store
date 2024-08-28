@@ -19,7 +19,7 @@ const BlogSection = () => {
     },
     {
       id: 3,
-      title: 'Why Sustainable Fashion Matters',
+      title: 'Sustainable Fashion Matters',
       description: 'Explore the importance of sustainability in the fashion industry.',
       imageUrl: '/assests/images/sustainable-fashion.jpg',
       date: 'October 10, 2024',

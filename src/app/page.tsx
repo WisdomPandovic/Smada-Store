@@ -84,7 +84,7 @@ const HomePage = () => {
             />
           </div>
 
-          <div className="p-6">
+          <div className="p-1">
             <h2 className="text-3xl font-bold mb-4">About Smada Store</h2>
             <p className="mb-4">
               Welcome to SMADA, where innovation meets excellence. Founded with a passion for delivering top-notch products and services, we are dedicated to creating solutions that make life easier, more enjoyable, and more fulfilling for our customers.
@@ -98,25 +98,25 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 p-8 bg-gray-100">
 
           <div className="flex flex-col items-center text-center">
-            <FaShippingFast className="text-4xl text-blue-500 mb-2" />
+            <FaShippingFast className="text-4xl text-red-500 mb-2" />
             <h3 className="font-semibold text-lg">Fast Free Shipping</h3>
             <p className="text-sm text-gray-600">Get your orders delivered fast and free.</p>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <FaUndoAlt className="text-4xl text-blue-500 mb-2" />
+            <FaUndoAlt className="text-4xl text-red-500 mb-2" />
             <h3 className="font-semibold text-lg">30 Day Money Back</h3>
             <p className="text-sm text-gray-600">Enjoy a risk-free shopping experience with our 30-day guarantee.</p>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <FaHeadset className="text-4xl text-blue-500 mb-2" />
+            <FaHeadset className="text-4xl text-red-500 mb-2" />
             <h3 className="font-semibold text-lg">24/7 Help Center</h3>
             <p className="text-sm text-gray-600">We&apos;re here to help you any time of the day.</p>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <FaGift className="text-4xl text-blue-500 mb-2" />
+            <FaGift className="text-4xl text-red-500 mb-2" />
             <h3 className="font-semibold text-lg">Many Promotional Gifts</h3>
             <p className="text-sm text-gray-600">Receive exclusive gifts with your purchases.</p>
           </div>
