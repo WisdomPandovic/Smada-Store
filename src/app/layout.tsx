@@ -35,6 +35,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from '@/components/shared/Footer';
+import Head from "next/head";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -45,27 +46,12 @@ export const metadata: Metadata = {
     title: "Smada Store",
     description: "An e-commerce platform for listing and managing products.",
     images: ["/images/og-image.jpg"],
-    url: "https://my-ecommerce-platform.com",
+    url: "https://smada-store.vercel.app",
   },
   robots: {
     index: true,
     follow: true,
   },
-  additionalMeta: [
-    {
-      name: "robots",
-      content: "index, follow",
-    },
-    {
-      rel: "sitemap",
-      href: "/sitemap.xml",
-      type: "application/xml",
-    },
-    {
-      rel: "robots",
-      href: "/robots.txt",
-    },
-  ],
 };
 
 export default function RootLayout({
@@ -75,6 +61,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        {/* Add additional meta tags directly here */}
+        <meta name="robots" content="index, follow" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        <link rel="robots" href="/robots.txt" />
+      </Head>
       <body className={`${montserrat.className} overflow-x-hidden`}>
         <Header />
         {children}
