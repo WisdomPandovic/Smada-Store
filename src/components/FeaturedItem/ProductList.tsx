@@ -8,8 +8,10 @@ const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
     const fetchedProducts = getProducts();
     setProducts(fetchedProducts);
+  }
   }, []);
 
   return (
