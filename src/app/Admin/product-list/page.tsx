@@ -154,9 +154,12 @@ const ProductList = () => {
   const [formData, setFormData] = useState({ name: '', price: '', description: '' });
 
   useEffect(() => {
-    const storedProducts = getProducts();
-    setData(storedProducts || []);
-    setFilteredData(storedProducts || []); // Initialize filteredData with all products
+    // Ensure localStorage is used only in the browser environment
+    if (typeof window !== 'undefined') {
+      const storedProducts = getProducts(); 
+      setData(storedProducts || []);  // Ensure data is always an array
+      setFilteredData(storedProducts || []); // Initialize filteredData with all products
+    }
   }, []);
 
   useEffect(() => {
