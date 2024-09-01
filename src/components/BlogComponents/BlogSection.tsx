@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BlogSection = () => {
-  
+
   const blogs = [
     {
       id: 1,

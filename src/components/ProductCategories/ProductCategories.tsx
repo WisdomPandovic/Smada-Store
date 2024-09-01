@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import CategoryList from '@/components/ProductCategories/CategoryList'; // Import the ProductList component
+import CategoryList from '@/components/ProductCategories/CategoryList';
 
 const CategorySelector: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('Men');
 
   const handleCategoryClick = (category: string) => {
-    setSelectedCategory(category); // Set the selected category
+    setSelectedCategory(category); 
   };
 
   return (
     <div>
-      {/* Category selection */}
       <div className="flex items-center justify-center min-h-[200px] p-4 md:p-6 lg:p-8 cursor-pointer">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-4xl">
           <div
@@ -34,7 +33,6 @@ const CategorySelector: React.FC = () => {
         </div>
       </div>
 
-      {/* Display the ProductList based on the selected category */}
       {selectedCategory && <CategoryList category={selectedCategory} />}
     </div>
   );

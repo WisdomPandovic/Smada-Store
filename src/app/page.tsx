@@ -14,7 +14,6 @@ const HomePage = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    // Ensure the code runs only on the client side
     if (typeof window !== 'undefined') {
       setProducts(getProducts());
     }
@@ -54,16 +53,6 @@ const HomePage = () => {
           layout="responsive"
         />
       </div>
-
-      {/* <div className="flex items-center justify-center min-h-[200px] p-4 md:p-6 lg:p-8 cursor-pointer">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-4xl">
-          <div className="border p-4 sm:p-6 text-center bg-black text-white uppercase">Men</div>
-          <div className="border p-4 sm:p-6 text-center bg-white uppercase">Women</div>
-          <div className="border p-4 sm:p-6 text-center bg-white uppercase">Underwear</div>
-        </div>
-      </div>
-      <ProductList /> */}
-
 
       {/* <h1 className="text-3xl font-bold mb-4">Product Listing</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -3,19 +3,18 @@ import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { getProducts } from '@/utils/storage';
 import { productColumns } from '@/components/Admin/table/columns/products';
-import SearchInput from '@/components/shared/Input/index'; // Import the SearchInput component
+import SearchInput from '@/components/shared/Input/index';
 
 const ProductList = () => {
   const [data, setData] = useState<any[]>([]);
   const [filteredData, setFilteredData] = useState<any[]>([]);
-  const [searchTerm, setSearchTerm] = useState(''); // State for search term
+  const [searchTerm, setSearchTerm] = useState('');
   const [editProduct, setEditProduct] = useState<any | null>(null);
   const [formData, setFormData] = useState({ name: '', price: '', description: '' });
 
   useEffect(() => {
-    // Ensure localStorage is used only in the browser environment
     if (typeof window !== 'undefined') {
-      const storedProducts = getProducts(); 
+      const storedProducts = getProducts();
       setData(storedProducts || []);  // Ensure data is always an array
       setFilteredData(storedProducts || []); // Initialize filteredData with all products
     }
@@ -23,7 +22,7 @@ const ProductList = () => {
 
   useEffect(() => {
     // Filter data based on the search term
-    const filtered = data.filter(product => 
+    const filtered = data.filter(product =>
       product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.price.toString().includes(searchTerm)
     );

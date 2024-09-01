@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProducts } from '../../utils/storage'; // Import the getProducts function
-import { Product } from '../../types'; // Import the Product type
+import { getProducts } from '../../utils/storage'; 
+import { Product } from '../../types'; 
 
 const ProductCategoryGrid = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -10,10 +10,9 @@ const ProductCategoryGrid = () => {
   const [womenCount, setWomenCount] = useState(0);
   const [underwearCount, setUnderwearCount] = useState(0);
 
-  // Fetch products from localStorage when the component mounts
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const fetchedProducts = getProducts(); // Fetch products from localStorage
+      const fetchedProducts = getProducts(); 
       setProducts(fetchedProducts);
 
       // Calculate counts for each category
@@ -29,14 +28,13 @@ const ProductCategoryGrid = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-1 gap-4 px-4 mt-3">
-      {/* Men Category */}
       <div className="relative">
       <Link href="/shop/men">
         <Image
-          src="/assests/images/men-fashion.jpg" // Replace with actual image path
+          src="/assests/images/men-fashion.jpg" 
           alt="Men Category"
-          width={400} // Adjust width
-          height={300} // Adjust height
+          width={400} 
+          height={300} 
           className="rounded-lg"
         />
        
@@ -47,14 +45,13 @@ const ProductCategoryGrid = () => {
         </Link>
       </div>
 
-      {/* Women Category */}
       <div className="relative">
       <Link href="/shop/women">
         <Image
-          src="/assests/images/women-fashion.jpg" // Replace with actual image path
+          src="/assests/images/women-fashion.jpg" 
           alt="Women Category"
-          width={400} // Adjust width
-          height={300} // Adjust height
+          width={400} 
+          height={300} 
           className="rounded-lg"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center rounded-lg">
@@ -64,15 +61,14 @@ const ProductCategoryGrid = () => {
         </Link>
       </div>
 
-      {/* Underwear Category */}
       <div className="relative">
       <Link href="/shop/underwear">
       <div className="relative group cursor-pointer">
         <Image
-          src="/assests/images/underwear.jpg" // Replace with actual image path
+          src="/assests/images/underwear.jpg" 
           alt="Underwear Category"
-          width={400} // Adjust width
-          height={300} // Adjust height
+          width={400} 
+          height={300} 
           className="rounded-lg transform transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center rounded-lg transition-opacity duration-500 group-hover:bg-opacity-70">
